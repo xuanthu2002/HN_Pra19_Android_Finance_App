@@ -1,4 +1,4 @@
-package com.example.android_template
+package com.example.fina
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
