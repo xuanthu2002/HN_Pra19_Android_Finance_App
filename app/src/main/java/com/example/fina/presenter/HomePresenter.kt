@@ -1,4 +1,3 @@
 package com.example.fina.presenter
 
-class HomePresenter {
-}
+class HomePresenter
