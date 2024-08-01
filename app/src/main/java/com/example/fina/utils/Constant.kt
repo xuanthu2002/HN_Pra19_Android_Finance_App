@@ -5,6 +5,7 @@ object Constant {
     const val BASE_URL_COIN_DETAIL = "https://api.coinranking.com/v2/coin/"
     const val USD_UUID = "yhjMzLPhuIDl"
     const val DEFAULT_LIMIT = 50
+    const val API_KEY = "coinranking91b6bab1957bb16084164088c92d1e38e63b408ef85cdf33"
 }
 
 enum class TimePeriod(private val displayName: String) {
@@ -18,6 +19,18 @@ enum class TimePeriod(private val displayName: String) {
     ONE_YEAR("1y"),
     THREE_YEARS("3y"),
     FIVE_YEARS("5y"),
+    ;
+
+    override fun toString(): String {
+        return displayName
+    }
+}
+
+enum class MarketCapInterval(private val displayName: String) {
+    HOUR("hour"),
+    DAY("day"),
+    WEEK("week"),
+    MONTH("month"),
     ;
 
     override fun toString(): String {

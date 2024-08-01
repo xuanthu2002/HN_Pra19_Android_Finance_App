@@ -19,12 +19,6 @@ object ParseDataWithJson {
                     keyEntity,
                 )
 
-            ResponseEntry.COIN ->
-                parseJsonToObject(
-                    jsonDataObject?.optJSONObject(ResponseEntry.COIN),
-                    keyEntity,
-                )
-
             ResponseEntry.PRICE_HISTORY ->
                 parseJsonToListObject(
                     jsonDataObject?.optJSONArray(ResponseEntry.PRICE_HISTORY),
@@ -61,7 +55,6 @@ object ParseDataWithJson {
             jsonObject?.let {
                 return when (keyEntity) {
                     ResponseEntry.COINS -> ParseJson.coinParseJson(it)
-                    ResponseEntry.COIN -> ParseJson.coinParseJson(it)
                     ResponseEntry.PRICE_HISTORY -> ParseJson.priceRecordParseJson(it)
                     else -> null
                 }
