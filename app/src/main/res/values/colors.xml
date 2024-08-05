@@ -9,4 +9,6 @@
     <color name="Red">#F44336</color>
     <color name="light_red">#DC5247</color>
     <color name="increase_color">#28C62F</color>
+    <color name="purple">#FFDBDDE8</color>
+    <color name="light_blue">#CCFFFF</color>
 </resources>

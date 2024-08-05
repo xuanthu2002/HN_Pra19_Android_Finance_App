@@ -47,7 +47,7 @@ class CoinRemoteDataSource : CoinDataSource.Remote {
         params: ExtraParams,
         listener: OnResultListener<List<PriceRecord>>,
     ) {
-        val url = "${Constant.BASE_URL_COIN_DETAIL}/history?$params"
+        val url = "${Constant.BASE_URL_COIN_DETAIL}$uuid/history?$params"
         GetJsonFromUrl(
             url,
             ResponseEntry.PRICE_HISTORY,

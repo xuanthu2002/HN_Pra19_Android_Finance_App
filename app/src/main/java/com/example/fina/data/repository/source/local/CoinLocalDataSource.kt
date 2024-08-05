@@ -6,11 +6,12 @@ import com.example.fina.data.repository.source.CoinDataSource
 class CoinLocalDataSource private constructor(
     private val preferencesHelper: SharedPreferencesHelper,
 ) : CoinDataSource.Local {
-    override fun getFavouriteCoins(listener: OnResultListener<List<String>>) {
+    override fun getFavouriteUuids(listener: OnResultListener<List<String>>) {
         val persistedData: String? =
             preferencesHelper.get(SharedPreferencesHelper.PREF_FAVOURITE)
         persistedData?.let {
             val result = it.split(SharedPreferencesHelper.SEPARATOR_CHARACTER)
+
             listener.onSuccess(result)
         }
     }
