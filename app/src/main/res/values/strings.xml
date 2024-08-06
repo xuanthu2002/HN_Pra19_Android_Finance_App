@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Android-template</string>
+    <string name="price">Price</string>
+    <string name="market_cap">Market Cap</string>
+    <string name="volume_24h">Volume (24h)</string>
+    <string name="_5y">5y</string>
+    <string name="_3y">3y</string>
+    <string name="_1y">1y</string>
+    <string name="_3m">3m</string>
+    <string name="_1m">1m</string>
+    <string name="_7d">7d</string>
+    <string name="_24h">24h</string>
+    <string name="_1h">1h</string>
+    <string name="overview">Overview</string>
+    <string name="vol_24h">Vol. (24h)</string>
+    <string name="circulating_supply">Circulating Supply</string>
+    <string name="total_supply">Total Supply</string>
+    <string name="max_supply">Max Supply</string>
+    <string name="rank">Rank</string>
+    <string name="change_24h">Change (24h)</string>
+    <string name="change_7d">Change (7d)</string>
+    <string name="about_bitcoin">ABOUT Bitcoin</string>
+    <string name="change_value">%s%%</string>
+    <string name="no_chart_data_available">No chart data available</string>
+    <string name="notfound">Không tìm thấy dữ liệu</string>
 </resources>
