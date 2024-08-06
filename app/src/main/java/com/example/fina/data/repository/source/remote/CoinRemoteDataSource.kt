@@ -7,6 +7,7 @@ import com.example.fina.data.repository.source.CoinDataSource
 import com.example.fina.data.repository.source.remote.fetchjson.GetJsonFromUrl
 import com.example.fina.utils.Constant
 import com.example.fina.utils.ExtraParams
+import com.example.fina.utils.MarketCapInterval
 import com.example.fina.utils.OrderProperties
 import com.example.fina.utils.ResponseEntry
 
@@ -16,29 +17,29 @@ class CoinRemoteDataSource : CoinDataSource.Remote {
         orderProperties: OrderProperties,
         listener: OnResultListener<List<Coin>>,
     ) {
-        val url: StringBuilder = StringBuilder(Constant.BASE_URL_COINS)
-        url.append("$params")
-        url.append("&$orderProperties")
+        val url = "${Constant.BASE_URL_COINS}?$params&$orderProperties"
         GetJsonFromUrl(
-            url.toString(),
+            url,
             ResponseEntry.COINS,
             listener,
         )
     }
 
-    override fun getCoinDetail(
-        uuid: String,
+    override fun getCoinsWithUuids(
+        uuids: List<String>,
         params: ExtraParams,
-        listener: OnResultListener<Coin>,
+        orderProperties: OrderProperties,
+        listener: OnResultListener<List<Coin>>,
     ) {
-        val url = StringBuilder(Constant.BASE_URL_COIN_DETAIL)
-        url.append(uuid)
-        url.append("?$params")
-        GetJsonFromUrl(
-            url.toString(),
-            ResponseEntry.COIN,
-            listener,
-        )
+        if (uuids.isEmpty()) {
+            listener.onSuccess(emptyList())
+        } else {
+            val url = StringBuilder("${Constant.BASE_URL_COINS}?$params&$orderProperties")
+            uuids.forEach {
+                url.append("&uuids[]=$it")
+            }
+            GetJsonFromUrl(url.toString(), ResponseEntry.COINS, listener)
+        }
     }
 
     override fun getPriceHistory(
@@ -46,14 +47,21 @@ class CoinRemoteDataSource : CoinDataSource.Remote {
         params: ExtraParams,
         listener: OnResultListener<List<PriceRecord>>,
     ) {
-        val url = StringBuilder(Constant.BASE_URL_COIN_DETAIL)
-        url.append(uuid)
-        url.append("/history?$params")
+        val url = "${Constant.BASE_URL_COIN_DETAIL}/history?$params"
         GetJsonFromUrl(
-            url.toString(),
+            url,
             ResponseEntry.PRICE_HISTORY,
             listener,
         )
+    }
+
+    override fun getMarketCapHistory(
+        uuid: String,
+        interval: MarketCapInterval,
+        listener: OnResultListener<List<PriceRecord>>,
+    ) {
+        val url = "${Constant.BASE_URL_COIN_DETAIL}$uuid/marketCaps?interval=$interval"
+        GetJsonFromUrl(url, ResponseEntry.PRICE_HISTORY, listener)
     }
 
     companion object {

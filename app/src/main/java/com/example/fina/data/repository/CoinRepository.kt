@@ -4,16 +4,13 @@ import com.example.fina.data.model.Coin
 import com.example.fina.data.model.PriceRecord
 import com.example.fina.data.repository.source.CoinDataSource
 import com.example.fina.utils.ExtraParams
+import com.example.fina.utils.MarketCapInterval
 import com.example.fina.utils.OrderProperties
 
 class CoinRepository private constructor(
     private val remote: CoinDataSource.Remote,
     private val local: CoinDataSource.Local,
 ) : CoinDataSource.Remote, CoinDataSource.Local {
-    override fun getLocalCoins(listener: OnResultListener<List<Coin>>) {
-        TODO("Not yet implemented")
-    }
-
     override fun getCoins(
         params: ExtraParams,
         orderProperties: OrderProperties,
@@ -26,12 +23,13 @@ class CoinRepository private constructor(
         )
     }
 
-    override fun getCoinDetail(
-        uuid: String,
+    override fun getCoinsWithUuids(
+        uuids: List<String>,
         params: ExtraParams,
-        listener: OnResultListener<Coin>,
+        orderProperties: OrderProperties,
+        listener: OnResultListener<List<Coin>>,
     ) {
-        remote.getCoinDetail(uuid, params, listener)
+        remote.getCoinsWithUuids(uuids, params, orderProperties, listener)
     }
 
     override fun getPriceHistory(
@@ -40,6 +38,32 @@ class CoinRepository private constructor(
         listener: OnResultListener<List<PriceRecord>>,
     ) {
         remote.getPriceHistory(uuid, params, listener)
+    }
+
+    override fun getMarketCapHistory(
+        uuid: String,
+        interval: MarketCapInterval,
+        listener: OnResultListener<List<PriceRecord>>,
+    ) {
+        remote.getMarketCapHistory(uuid, interval, listener)
+    }
+
+    override fun getFavouriteUuids(listener: OnResultListener<List<String>>) {
+        local.getFavouriteUuids(listener)
+    }
+
+    override fun addFavouriteCoin(
+        uuid: String,
+        listener: OnResultListener<Unit>,
+    ) {
+        local.addFavouriteCoin(uuid, listener)
+    }
+
+    override fun removeFavouriteCoin(
+        uuid: String,
+        listener: OnResultListener<Unit>,
+    ) {
+        local.removeFavouriteCoin(uuid, listener)
     }
 
     companion object {
