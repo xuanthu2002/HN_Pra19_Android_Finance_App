@@ -1,5 +1,9 @@
 package com.example.fina.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Coin(
     var uuid: String = "",
     var symbol: String = "",
@@ -19,4 +23,4 @@ data class Coin(
     var tier: Int = 0,
     var lowVolume: Boolean = false,
     var listedAt: Long = 0,
-)
+) : Parcelable
