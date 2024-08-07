@@ -1,12 +1,19 @@
 package com.example.fina.screen
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.example.fina.R
+import com.example.fina.screen.favourite.FavouriteFragment
+import com.example.fina.utils.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivity() {
+    override fun getLayoutResourceId(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun initView() {
+        supportFragmentManager
+            .beginTransaction()
+//            .addToBackStack(MoviesFragment::javaClass.name)
+            .replace(R.id.layoutContainer, FavouriteFragment())
+            .commit()
     }
 }

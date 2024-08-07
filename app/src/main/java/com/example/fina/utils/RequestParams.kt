@@ -5,7 +5,7 @@ class ExtraParams(
     private val timePeriod: TimePeriod = TimePeriod.TWENTY_FOUR_HOURS,
 ) {
     override fun toString(): String {
-        return "referenceCurrencyUuid=$referenceCurrencyUuid&timePeriod=$timePeriod"
+        return "referenceCurrencyUuid=$referenceCurrencyUuid&timePeriod=${timePeriod.getInternalValue()}"
     }
 }
 
@@ -16,6 +16,6 @@ class OrderProperties(
     private val offset: Int = 0,
 ) {
     override fun toString(): String {
-        return "orderBy=$orderBy&orderDirection=$orderDirection&limit=$limit&offset=$offset"
+        return "orderBy=${orderBy.getInternalValue()}&orderDirection=$orderDirection&limit=$limit&offset=$offset"
     }
 }

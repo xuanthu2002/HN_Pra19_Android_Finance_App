@@ -8,7 +8,18 @@
     <color name="light_black">#575757</color>
     <color name="Red">#F44336</color>
     <color name="light_red">#DC5247</color>
+    <color name="decrease_color">#F44336</color>
     <color name="increase_color">#28C62F</color>
     <color name="purple">#FFDBDDE8</color>
     <color name="light_blue">#CCFFFF</color>
+
+    <color name="background">#FAFAFA</color>
+    <color name="white_smoke">#F5F5F5</color>
+    <color name="snow">#FFFAFA</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="seashell">#FFF5EE</color>
+    <color name="ghost_white">#F8F8FF</color>
+    <color name="lavender_blush">#FFF0F5</color>
+    <color name="floral_white">#FFFAF0</color>
+    <color name="selected_item_background">#BFBFBF</color>)
 </resources>

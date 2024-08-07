@@ -1,5 +1,6 @@
 package com.example.fina.screen.detail
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.core.os.bundleOf
@@ -48,6 +49,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), DetailContract.Vie
     private fun loadCoinData() {
         arguments?.run {
             mCoin = getParcelable(ARGUMENT_COIN)
+            Log.i("TAG1", "loadCoinData: $mCoin")
         }
         mCoin?.notNull {
             viewBinding.apply {

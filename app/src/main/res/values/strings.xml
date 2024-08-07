@@ -23,4 +23,36 @@
     <string name="change_value">%s%%</string>
     <string name="no_chart_data_available">No chart data available</string>
     <string name="notfound">Không tìm thấy dữ liệu</string>
+
+    <!--    time period-->
+    <string name="one_hour_display">1 hour</string>
+    <string name="three_hours_display">3 hours</string>
+    <string name="twelve_hours_display">12 hours</string>
+    <string name="twenty_four_hours_display">24 hours</string>
+    <string name="seven_days_display">7 days</string>
+    <string name="thirty_days_display">30 days</string>
+    <string name="three_months_display">3 months</string>
+    <string name="one_year_display">1 year</string>
+    <string name="three_years_display">3 years</string>
+    <string name="five_years_display">5 years</string>
+
+    <!--    order by-->
+    <string name="price_display">Price</string>
+    <string name="market_cap_display">Market Cap</string>
+    <string name="volume_24h_display">24h Volume</string>
+    <string name="change_display">Change</string>
+    <string name="listed_at_display">Listed At</string>
+
+    <string name="usd">USD</string>
+    <string name="_24_hour">24 Hour</string>
+    <string name="_15_76_percent">15.76%</string>
+    <string name="_66_4173_dollar">$ 66.4173</string>
+    <string name="btc">BTC</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="market_cap_label">Market Cap:</string>
+    <string name="_1310_6b_dollar">$ 1310.6B</string>
+    <string name="vol_24h_label">Vol. (24h):</string>
+    <string name="_26_9b_dollar">$ 26.9B</string>
+    <string name="choose_period">Choose period</string>
+    <string name="sort_by">Sort by</string>
 </resources>
