@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Android-template</string>
+    <string name="app_name">Crypto Currency</string>
     <string name="price">Price</string>
-    <string name="market_cap">Market Cap</string>
+    <string name="market_cap">Market Cap:</string>
     <string name="volume_24h">Volume (24h)</string>
     <string name="_5y">5y</string>
     <string name="_3y">3y</string>
@@ -22,5 +23,35 @@
     <string name="about_bitcoin">ABOUT Bitcoin</string>
     <string name="change_value">%s%%</string>
     <string name="no_chart_data_available">No chart data available</string>
-    <string name="notfound">Không tìm thấy dữ liệu</string>
+    <string name="notfound">Not Found Data</string>
+    <string name="coin_image">Coin Image</string>
+    <string name="volume">Vol</string>
+    <string name="time_period">(24h):</string>
+    <string name="home">Home</string>
+    <string name="favourite">Favourite</string>
+    <string name="search">Search</string>
+    <string name="setting">Setting</string>
+    <string name="percentage_text">%1$d%%</string>
+    <string name="total_coins_stats">Total Coins:</string>
+    <string name="total_market_cap_stats">Total Market Cap:</string>
+    <string name="total_marketplace_stats">Total Marketplace:</string>
+    <string name="vol_24h_stats">Vol (24h):</string>
+    <string name="one_hour">1 hour</string>
+    <string name="MARKET_CAP">Market Cap</string>
+    <string name="PRICE">Price</string>
+    <string name="VOLUME_24H">Volume (24h)</string>
+    <string name="CHANGE">Change</string>
+    <string name="LISTED_AT">Listed At</string>
+    <string name="ONE_HOUR">1h</string>
+    <string name="THREE_HOURS">3h</string>
+    <string name="TWELVE_HOURS">12h</string>
+    <string name="TWENTY_FOUR_HOURS">24h</string>
+    <string name="SEVEN_DAYS">7 Days</string>
+    <string name="THIRTY_DAYS">30 Days</string>
+    <string name="THREE_MONTHS">3 months</string>
+    <string name="ONE_YEAR">1 year</string>
+    <string name="THREE_YEARS">3 years</string>
+    <string name="FIVE_YEARS">5 years</string>
+    <string name="search_hint">Enter content to search</string>
+    <string name="back">Back</string>
 </resources>
