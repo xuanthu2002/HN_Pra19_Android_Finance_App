@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="@id/topBarLayout"
+            app:layout_constraintTop_toTopOf="@id/topBarLayout"
+            app:layout_constraintBottom_toBottomOf="@id/topBarLayout"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchBar"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bold_border_layout"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="@id/topBarLayout"
+            app:layout_constraintTop_toTopOf="@id/topBarLayout"
+            app:layout_constraintBottom_toBottomOf="@id/topBarLayout"
+            android:layout_margin="@dimen/dp_5">
+
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_35"
+                android:hint="@string/search_hint"
+                android:background="@drawable/rounded_border_layout"
+                android:padding="@dimen/dp_0"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="@dimen/sp_15"
+                android:inputType="text"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="@id/searchBar"
+                app:layout_constraintEnd_toStartOf="@id/btnSearch"
+                app:layout_constraintTop_toTopOf="@id/searchBar"
+                app:layout_constraintBottom_toBottomOf="@id/searchBar" />
+
+            <ImageButton
+                android:id="@+id/btnSearch"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:contentDescription="@string/search"
+                android:src="@drawable/ic_search"
+                android:scaleType="fitXY"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="@id/searchBar"
+                app:layout_constraintTop_toTopOf="@id/searchBar"
+                app:layout_constraintBottom_toBottomOf="@id/searchBar"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCoin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topBarLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="unlabeled" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

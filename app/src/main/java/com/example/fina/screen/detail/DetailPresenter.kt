@@ -51,7 +51,7 @@ class DetailPresenter internal constructor(private val coinRepository: CoinRepos
                     }
 
                     override fun onFailure(exception: Exception?) {
-                        /* no-op */
+                        // no-op
                     }
                 },
             )
@@ -79,11 +79,11 @@ class DetailPresenter internal constructor(private val coinRepository: CoinRepos
         }
 
         override fun onStart() {
-            /* no-op */
+            // no-op
         }
 
         override fun onStop() {
-            /* no-op */
+            // no-op
         }
 
         override fun setView(view: DetailContract.View?) {
